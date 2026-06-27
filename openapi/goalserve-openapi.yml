@@ -1,0 +1,246 @@
+openapi: 3.0.1
+info:
+  title: GoalServe Sports Data Feeds API
+  description: >-
+    GoalServe live sports data feeds API. All feeds are requested with a
+    standard HTTP GET and return XML by default or JSON when the `json` query
+    parameter is set. Authentication is performed with a unique API access key
+    carried directly in the request path immediately after `/getfeed/`. Access
+    to in-play feeds additionally requires the caller's IP address to be
+    whitelisted in the GoalServe system.
+  termsOfService: https://www.goalserve.com/en/terms
+  contact:
+    name: GoalServe Support
+    email: support@goalserve.com
+    url: https://www.goalserve.com/en/contact-us
+  version: '1.0'
+servers:
+  - url: https://www.goalserve.com/getfeed
+    description: GoalServe feed host. The path segment following this base URL is the API access key.
+security:
+  - ApiKeyInPath: []
+paths:
+  /{key}/soccernew/home:
+    get:
+      operationId: getLiveScores
+      tags:
+        - Live Scores
+      summary: Live soccer scores
+      description: >-
+        Returns currently live and recently played soccer matches across all
+        covered leagues, including scores, current minute, goals, cards and
+        substitutions.
+      parameters:
+        - $ref: '#/components/parameters/Key'
+        - $ref: '#/components/parameters/Json'
+        - name: cat
+          in: query
+          required: false
+          description: Optional category (league) identifier to filter the live feed to a single competition.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: object
+  /{key}/soccernew/{country}:
+    get:
+      operationId: getCountryLiveScores
+      tags:
+        - Live Scores
+      summary: Live scores by country
+      description: Returns live and recent soccer matches for a single country.
+      parameters:
+        - $ref: '#/components/parameters/Key'
+        - name: country
+          in: path
+          required: true
+          description: Country identifier (e.g. england, spain, italy).
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Json'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: object
+  /{key}/soccerfixtures/{country}/{cat}:
+    get:
+      operationId: getFixtures
+      tags:
+        - Fixtures
+      summary: Soccer fixtures and schedules
+      description: >-
+        Returns upcoming fixtures, schedules and results for a given country and
+        competition category.
+      parameters:
+        - $ref: '#/components/parameters/Key'
+        - name: country
+          in: path
+          required: true
+          description: Country identifier.
+          schema:
+            type: string
+        - name: cat
+          in: path
+          required: true
+          description: Competition (category) identifier.
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Json'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: object
+  /{key}/standings/{competition}:
+    get:
+      operationId: getStandings
+      tags:
+        - Standings
+      summary: League standings and top scorers
+      description: >-
+        Returns the standings table and top scorers for a given competition
+        identifier.
+      parameters:
+        - $ref: '#/components/parameters/Key'
+        - name: competition
+          in: path
+          required: true
+          description: Competition identifier (e.g. 1204 for the English Premier League).
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Json'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: object
+  /{key}/commentaries/{matchid}:
+    get:
+      operationId: getCommentaries
+      tags:
+        - Commentaries
+      summary: Match commentaries and events
+      description: >-
+        Returns textual commentaries, lineups and a chronological list of match
+        events (goals, cards, substitutions) for a single match.
+      parameters:
+        - $ref: '#/components/parameters/Key'
+        - name: matchid
+          in: path
+          required: true
+          description: Match identifier.
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Json'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: object
+  /{key}/soccerstats/team/{team_id}:
+    get:
+      operationId: getTeamData
+      tags:
+        - Team Data
+      summary: Team profile and statistics
+      description: Returns the profile, squad and statistics for a single team.
+      parameters:
+        - $ref: '#/components/parameters/Key'
+        - name: team_id
+          in: path
+          required: true
+          description: Team identifier.
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Json'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: object
+  /{key}/soccerstats/player/{player_id}:
+    get:
+      operationId: getPlayerData
+      tags:
+        - Player Data
+      summary: Player profile and statistics
+      description: Returns the profile, biography and statistics for a single player.
+      parameters:
+        - $ref: '#/components/parameters/Key'
+        - name: player_id
+          in: path
+          required: true
+          description: Player identifier.
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Json'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    ApiKeyInPath:
+      type: apiKey
+      in: path
+      name: key
+      description: >-
+        Unique GoalServe API access key supplied as the first path segment after
+        `/getfeed/`. Issued on registration; in-play feeds also require the
+        caller's IP address to be whitelisted.
+  parameters:
+    Key:
+      name: key
+      in: path
+      required: true
+      description: GoalServe API access key path segment.
+      schema:
+        type: string
+    Json:
+      name: json
+      in: query
+      required: false
+      description: Set to `1` to receive the feed as JSON instead of the default XML.
+      schema:
+        type: integer
+        enum:
+          - 1

@@ -1,0 +1,93 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: GoalServe
+providerId: goalserve
+created: '2026-06-25'
+modified: '2026-06-25'
+reconciled: false
+tags:
+- Sports Data
+- Live Scores
+- Odds
+- Fixtures
+- Soccer
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of GoalServe spend. GoalServe bills via fixed-fee subscription
+  packages (per sport or all-sports Full Package) on monthly, half-yearly or
+  yearly terms, with optional in-play add-ons, rather than usage-metered
+  per-request pricing. Cost is therefore largely a recurring committed
+  subscription line item; the primary FinOps levers are right-sizing the set of
+  sports and feed types subscribed and choosing the billing term. Exact list
+  prices are sales-led and not reconciled here.
+notes: >-
+  GoalServe does not publish usage-based per-call rates; spend is driven by
+  which sport packages, feed types and contract term are purchased. Verify
+  current package pricing with GoalServe sales during reconciliation.
+sources:
+- https://www.goalserve.com/en/sport-data-feeds/soccer-api/prices
+- https://www.goalserve.com/en/sport-data-feeds/full-package-api/prices
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: GoalServe
+serviceCategory: Analytics and Data
+billingModel:
+  pricingCategory: Subscription
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+  - Purchase
+  - Usage
+  - Adjustment
+focusColumns:
+  ServiceName: GoalServe Sports Data Feeds
+  ServiceCategory: Analytics and Data
+  ProviderName: GoalServe
+  PublisherName: GoalServe
+  InvoiceIssuerName: GoalServe
+  BillingCurrency: USD
+  ChargeCategory: Purchase
+  PricingCategory: Subscription
+meters:
+- name: sport_subscription
+  description: Recurring subscription fee for a single sport's feed package.
+  unit: subscription
+  aggregation: sum
+  dimensions:
+  - account
+  - sport
+  - term
+- name: full_package_subscription
+  description: Recurring subscription fee for the all-sports Full Package.
+  unit: subscription
+  aggregation: sum
+  dimensions:
+  - account
+  - term
+- name: inplay_subscription
+  description: Recurring add-on fee for low-latency in-play odds and stats feeds.
+  unit: subscription
+  aggregation: sum
+  dimensions:
+  - account
+  - term
+principles:
+- name: Visibility
+  description: Track active sport packages, feed types and contract renewal dates per account.
+- name: Allocation
+  description: Map each sport/feed subscription to the product or team that consumes it.
+- name: Optimization
+  description: Right-size subscriptions to only the sports and feed types in use; prefer longer billing terms (half-yearly/yearly) where committed usage justifies the discount.
+- name: Accountability
+  description: Assign an owner per subscription and review renewals against actual feed usage.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

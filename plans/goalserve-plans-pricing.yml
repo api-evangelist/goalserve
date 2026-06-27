@@ -1,0 +1,124 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: GoalServe
+providerId: goalserve
+created: '2026-06-25'
+modified: '2026-06-25'
+reconciled: false
+tags:
+- Sports Data
+- Live Scores
+- Odds
+- Fixtures
+- Soccer
+- Plans
+description: >-
+  GoalServe sells per-sport and per-feed subscription packages rather than a
+  public pay-as-you-go API. Pricing is sales-led: prospects start a free trial,
+  then subscribe to a single sport (e.g. Soccer) or to the all-sports Full
+  Package, with monthly, half-yearly and yearly billing terms. Published list
+  prices vary by sport, by feed type (live scores, fixtures, standings, odds,
+  in-play) and by contract length, and are not reconciled in this artifact.
+notes: >-
+  Exact per-feed and per-sport prices are quoted on each sport's package page
+  and through GoalServe sales; figures change and are not captured here.
+  Confirm current package contents and pricing during reconciliation.
+sources:
+- https://www.goalserve.com/en/sport-data-feeds/soccer-api/prices
+- https://www.goalserve.com/en/sport-data-feeds/full-package-api/prices
+- https://www.goalserve.com/en/sports-data-api
+plans:
+- id: goalserve-free-trial
+  name: Free Trial
+  type: trial
+  description: >-
+    Time-limited full-access trial of the sports data feeds for evaluation
+    before subscribing.
+  entries:
+  - label: Trial Access
+    name: trial
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: free trial
+    userMultiplied: false
+  elements:
+  - name: Live Scores
+  - name: Fixtures and Schedules
+  - name: Standings
+  - name: Odds
+  - name: Commentaries
+  - name: Team and Player Data
+- id: goalserve-single-sport
+  name: Single Sport Package
+  type: subscription
+  description: >-
+    Subscription to the feeds for an individual sport such as Soccer, billed
+    monthly, half-yearly or yearly. Feed scope and price vary by sport and term.
+  entries:
+  - label: Single Sport Subscription
+    name: single_sport
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Live Scores
+  - name: Fixtures and Schedules
+  - name: Standings
+  - name: Odds
+  - name: Commentaries
+  - name: Team and Player Data
+- id: goalserve-full-package
+  name: Full Package
+  type: subscription
+  description: >-
+    All-sports subscription covering the full 20+ sport catalog of feeds, billed
+    monthly, half-yearly or yearly.
+  entries:
+  - label: Full Package Subscription
+    name: full_package
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: All Sports Feeds
+  - name: Live Scores
+  - name: Odds
+  - name: In-Play Data
+- id: goalserve-inplay
+  name: In-Play Add-On
+  type: subscription
+  description: >-
+    Low-latency prematch and in-play odds and stats feeds. Requires registration
+    and IP whitelisting; priced separately from standard feeds.
+  entries:
+  - label: In-Play Subscription
+    name: inplay
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: In-Play Odds
+  - name: In-Play Stats
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

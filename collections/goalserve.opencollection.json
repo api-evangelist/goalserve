@@ -1,0 +1,127 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoalServe Sports Data Feeds API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Live Scores",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Live soccer scores",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.goalserve.com/getfeed/{key}/soccernew/home?json=1"
+          },
+          "docs": "Returns currently live and recently played soccer matches across all covered leagues, including scores, current minute, goals, cards and substitutions."
+        },
+        {
+          "info": {
+            "name": "Live scores by country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.goalserve.com/getfeed/{key}/soccernew/{country}?json=1"
+          },
+          "docs": "Returns live and recent soccer matches for a single country."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Fixtures",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Soccer fixtures and schedules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.goalserve.com/getfeed/{key}/soccerfixtures/{country}/{cat}?json=1"
+          },
+          "docs": "Returns upcoming fixtures, schedules and results for a given country and competition category."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Standings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "League standings and top scorers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.goalserve.com/getfeed/{key}/standings/{competition}?json=1"
+          },
+          "docs": "Returns the standings table and top scorers for a given competition identifier."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Commentaries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Match commentaries and events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.goalserve.com/getfeed/{key}/commentaries/{matchid}?json=1"
+          },
+          "docs": "Returns textual commentaries, lineups and a chronological list of match events (goals, cards, substitutions) for a single match."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Team and Player Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Team profile and statistics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.goalserve.com/getfeed/{key}/soccerstats/team/{team_id}?json=1"
+          },
+          "docs": "Returns the profile, squad and statistics for a single team."
+        },
+        {
+          "info": {
+            "name": "Player profile and statistics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.goalserve.com/getfeed/{key}/soccerstats/player/{player_id}?json=1"
+          },
+          "docs": "Returns the profile, biography and statistics for a single player."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,391 @@
+{
+  "item": [
+    {
+      "id": "b1f0e3a2-0001-4a10-9c11-0a0b0c0d0001",
+      "name": "Live Scores",
+      "description": {
+        "content": "Real-time live soccer score feeds.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b1f0e3a2-0001-4a10-9c11-0a0b0c0d0011",
+          "name": "Live soccer scores",
+          "request": {
+            "name": "Live soccer scores",
+            "description": {
+              "content": "Returns currently live and recently played soccer matches across all covered leagues.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{key}}/soccernew/home?json=1",
+              "path": [
+                "{{key}}",
+                "soccernew",
+                "home"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "json",
+                  "value": "1"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": {}
+          },
+          "response": []
+        },
+        {
+          "id": "b1f0e3a2-0001-4a10-9c11-0a0b0c0d0012",
+          "name": "Live scores by country",
+          "request": {
+            "name": "Live scores by country",
+            "description": {
+              "content": "Returns live and recent soccer matches for a single country.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{key}}/soccernew/:country?json=1",
+              "path": [
+                "{{key}}",
+                "soccernew",
+                ":country"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "json",
+                  "value": "1"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "country",
+                  "value": "england"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": {}
+          },
+          "response": []
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b1f0e3a2-0002-4a10-9c11-0a0b0c0d0002",
+      "name": "Fixtures",
+      "description": {
+        "content": "Fixtures, schedules and results feeds.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b1f0e3a2-0002-4a10-9c11-0a0b0c0d0021",
+          "name": "Soccer fixtures and schedules",
+          "request": {
+            "name": "Soccer fixtures and schedules",
+            "description": {
+              "content": "Returns upcoming fixtures, schedules and results for a given country and competition category.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{key}}/soccerfixtures/:country/:cat?json=1",
+              "path": [
+                "{{key}}",
+                "soccerfixtures",
+                ":country",
+                ":cat"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "json",
+                  "value": "1"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "country",
+                  "value": "england"
+                },
+                {
+                  "key": "cat",
+                  "value": "1204"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": {}
+          },
+          "response": []
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b1f0e3a2-0003-4a10-9c11-0a0b0c0d0003",
+      "name": "Standings",
+      "description": {
+        "content": "League standings and top scorers feeds.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b1f0e3a2-0003-4a10-9c11-0a0b0c0d0031",
+          "name": "League standings and top scorers",
+          "request": {
+            "name": "League standings and top scorers",
+            "description": {
+              "content": "Returns the standings table and top scorers for a given competition identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{key}}/standings/:competition?json=1",
+              "path": [
+                "{{key}}",
+                "standings",
+                ":competition"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "json",
+                  "value": "1"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "competition",
+                  "value": "1204"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": {}
+          },
+          "response": []
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b1f0e3a2-0004-4a10-9c11-0a0b0c0d0004",
+      "name": "Commentaries",
+      "description": {
+        "content": "Per-match commentaries and event feeds.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b1f0e3a2-0004-4a10-9c11-0a0b0c0d0041",
+          "name": "Match commentaries and events",
+          "request": {
+            "name": "Match commentaries and events",
+            "description": {
+              "content": "Returns textual commentaries, lineups and a chronological list of match events for a single match.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{key}}/commentaries/:matchid?json=1",
+              "path": [
+                "{{key}}",
+                "commentaries",
+                ":matchid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "json",
+                  "value": "1"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "matchid",
+                  "value": "123456"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": {}
+          },
+          "response": []
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b1f0e3a2-0005-4a10-9c11-0a0b0c0d0005",
+      "name": "Team and Player Data",
+      "description": {
+        "content": "Team and player profile and statistics feeds.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b1f0e3a2-0005-4a10-9c11-0a0b0c0d0051",
+          "name": "Team profile and statistics",
+          "request": {
+            "name": "Team profile and statistics",
+            "description": {
+              "content": "Returns the profile, squad and statistics for a single team.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{key}}/soccerstats/team/:team_id?json=1",
+              "path": [
+                "{{key}}",
+                "soccerstats",
+                "team",
+                ":team_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "json",
+                  "value": "1"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "team_id",
+                  "value": "9568"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": {}
+          },
+          "response": []
+        },
+        {
+          "id": "b1f0e3a2-0005-4a10-9c11-0a0b0c0d0052",
+          "name": "Player profile and statistics",
+          "request": {
+            "name": "Player profile and statistics",
+            "description": {
+              "content": "Returns the profile, biography and statistics for a single player.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{key}}/soccerstats/player/:player_id?json=1",
+              "path": [
+                "{{key}}",
+                "soccerstats",
+                "player",
+                ":player_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "json",
+                  "value": "1"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "player_id",
+                  "value": "30981"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": {}
+          },
+          "response": []
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.goalserve.com/getfeed",
+      "key": "baseUrl"
+    },
+    {
+      "type": "string",
+      "value": "YOUR_API_ACCESS_KEY",
+      "key": "key"
+    }
+  ],
+  "info": {
+    "_postman_id": "b1f0e3a2-0000-4a10-9c11-0a0b0c0d0000",
+    "name": "GoalServe Sports Data Feeds API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "GoalServe live sports data feeds. All feeds are HTTP GET, return XML by default or JSON when json=1, and carry the unique API access key as the first path segment after /getfeed/.\n\nContact Support:\n Name: GoalServe Support\n Email: support@goalserve.com",
+      "type": "text/plain"
+    }
+  }
+}

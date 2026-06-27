@@ -1,0 +1,63 @@
+aid: goalserve
+name: GoalServe
+review:
+  question: Does GoalServe expose a documented public WebSocket API?
+  answer: false
+  date: '2026-06-25'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was created. GoalServe's documented event-push
+    surface is HTTP webhooks (server-to-client POST callbacks), not a
+    streaming WebSocket or Server-Sent Events transport. Real-time
+    consumers otherwise poll the HTTP GET feeds on recommended refresh
+    intervals.
+findings:
+  summary: |
+    GoalServe does not publish a documented public WebSocket API. The data
+    feeds platform is a REST-style HTTP GET service under
+    https://www.goalserve.com/getfeed/{key}/... returning XML or JSON, with
+    the unique API access key carried in the request path and IP whitelisting
+    required for in-play feeds. For event delivery GoalServe documents
+    webhooks that POST notifications to a subscriber-supplied URL when live
+    sporting events change. No bidirectional, persistent ws:// or wss://
+    WebSocket endpoint is documented for live scores, odds, or any feed.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://www.goalserve.com/getfeed
+      documented: true
+    - protocol: Webhook
+      scheme: https
+      note: Server-to-client HTTP POST callbacks notifying subscriber applications of live event changes. Not WebSocket.
+      documented: true
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented in GoalServe's API reference or product pages as of the review date.
+  endpointsConfirmedRest:
+    - GET https://www.goalserve.com/getfeed/{key}/soccernew/home
+    - GET https://www.goalserve.com/getfeed/{key}/soccernew/{country}
+    - GET https://www.goalserve.com/getfeed/{key}/soccerfixtures/{country}/{cat}
+    - GET https://www.goalserve.com/getfeed/{key}/standings/{competition}
+    - GET https://www.goalserve.com/getfeed/{key}/commentaries/{matchid}
+    - GET https://www.goalserve.com/getfeed/{key}/soccerstats/team/{team_id}
+    - GET https://www.goalserve.com/getfeed/{key}/soccerstats/player/{player_id}
+sources:
+  - url: https://documentation.goalserve.com/v1/
+    type: Documentation
+    note: API reference describes HTTP GET feeds and webhook POST notifications; no WebSocket mentioned.
+  - url: https://www.goalserve.com/en/sport-data-feeds/soccer-api/description
+    type: Documentation
+    note: Soccer feed description lists live scores, fixtures, standings, odds, commentaries, profiles over HTTP; refresh by polling.
+  - url: https://www.goalserve.com/en/api-documentation
+    type: APIReference
+    note: All documented access is HTTP GET feeds plus webhook callbacks.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists, and the documented push mechanism
+    (webhooks) is request/response HTTP POST rather than a streaming
+    transport in scope for AsyncAPI modeling, so no AsyncAPI document was
+    authored.

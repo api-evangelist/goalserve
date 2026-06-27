@@ -1,0 +1,71 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: GoalServe
+providerId: goalserve
+created: '2026-06-25'
+modified: '2026-06-25'
+reconciled: false
+tags:
+- Sports Data
+- Live Scores
+- Odds
+- Fixtures
+- Soccer
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  GoalServe gates feed access through registration, a unique per-account API
+  access key carried in the request path, and IP whitelisting for in-play
+  feeds, rather than publishing explicit RPM/RPS request quotas. Feeds are
+  polled over HTTP GET on recommended refresh intervals (live scores every few
+  seconds, live stats around every 30 seconds); excessive polling beyond
+  documented refresh rates is discouraged. Specific numeric request limits are
+  not reconciled in this artifact.
+notes: >-
+  GoalServe documents recommended polling intervals and a 30-second
+  staleness rule for in-play data (if updated_ts does not advance for more
+  than 30 seconds, matches and odds are treated as suspended) rather than
+  hard request-rate caps. Verify any account-specific limits with GoalServe
+  during reconciliation.
+sources:
+- https://documentation.goalserve.com/v1/
+- https://www.goalserve.com/en/sport-data-feeds/soccer-api/description
+- https://www.goalserve.com/en/api-documentation
+responseCodes:
+  throttled: see provider documentation
+limits:
+- name: API Access Key
+  scope: account
+  metric: authentication
+  limit: one key per account
+  notes: Feeds require a unique private API access key carried in the request path.
+- name: IP Whitelisting
+  scope: account
+  metric: source_ip
+  limit: whitelisted IPs only
+  notes: In-play / inplay feeds require the caller's IP address to be whitelisted.
+- name: Live Score Polling
+  scope: feed
+  metric: refresh_interval
+  limit: every few seconds (recommended)
+  notes: Live score feeds refresh every few seconds; poll on the recommended interval.
+- name: Live Stats Polling
+  scope: feed
+  metric: refresh_interval
+  limit: ~30 seconds (recommended)
+  notes: Live statistics feeds update roughly every 30 seconds.
+- name: In-Play Staleness
+  scope: feed
+  metric: staleness
+  limit: 30 seconds
+  notes: If updated_ts does not advance for more than 30 seconds, odds and matches are suspended.
+policies:
+- name: Recommended Polling Intervals
+  description: Poll each feed at its documented refresh cadence; avoid over-polling beyond the published intervals.
+- name: Access Gating
+  description: Access is controlled via registration, per-account API key, and IP whitelisting for in-play feeds.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
