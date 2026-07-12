@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/goalserve-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - path
+schemes:
+- name: ApiKeyInPath
+  type: apiKey
+  in: path
+  parameter: key
+  description: Unique GoalServe API access key supplied as the first path segment after `/getfeed/`.
+    Issued on registration; in-play feeds also require the caller's IP address to be whitelisted.
+  sources:
+  - openapi/goalserve-openapi.yml
