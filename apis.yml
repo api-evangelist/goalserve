@@ -117,6 +117,8 @@ apis:
   description: Team and player profiles, squad data, statistics and injuries keyed
     by team or player identifier.
 common:
+- type: AgenticAccess
+  url: agentic-access/goalserve-agentic-access.yml
 - type: DomainSecurity
   url: security/goalserve-domain-security.yml
 - type: Authentication
