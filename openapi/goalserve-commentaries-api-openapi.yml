@@ -1,0 +1,68 @@
+openapi: 3.0.1
+info:
+  title: GoalServe Sports Data Feeds Commentaries API
+  description: GoalServe live sports data feeds API. All feeds are requested with a standard HTTP GET and return XML by default or JSON when the `json` query parameter is set. Authentication is performed with a unique API access key carried directly in the request path immediately after `/getfeed/`. Access to in-play feeds additionally requires the caller's IP address to be whitelisted in the GoalServe system.
+  termsOfService: https://www.goalserve.com/en/terms
+  contact:
+    name: GoalServe Support
+    email: support@goalserve.com
+    url: https://www.goalserve.com/en/contact-us
+  version: '1.0'
+servers:
+- url: https://www.goalserve.com/getfeed
+  description: GoalServe feed host. The path segment following this base URL is the API access key.
+security:
+- ApiKeyInPath: []
+tags:
+- name: Commentaries
+paths:
+  /{key}/commentaries/{matchid}:
+    get:
+      operationId: getCommentaries
+      tags:
+      - Commentaries
+      summary: Match commentaries and events
+      description: Returns textual commentaries, lineups and a chronological list of match events (goals, cards, substitutions) for a single match.
+      parameters:
+      - $ref: '#/components/parameters/Key'
+      - name: matchid
+        in: path
+        required: true
+        description: Match identifier.
+        schema:
+          type: string
+      - $ref: '#/components/parameters/Json'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: object
+components:
+  parameters:
+    Json:
+      name: json
+      in: query
+      required: false
+      description: Set to `1` to receive the feed as JSON instead of the default XML.
+      schema:
+        type: integer
+        enum:
+        - 1
+    Key:
+      name: key
+      in: path
+      required: true
+      description: GoalServe API access key path segment.
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyInPath:
+      type: apiKey
+      in: path
+      name: key
+      description: Unique GoalServe API access key supplied as the first path segment after `/getfeed/`. Issued on registration; in-play feeds also require the caller's IP address to be whitelisted.
