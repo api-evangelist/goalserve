@@ -6,7 +6,20 @@ description: GoalServe is a live sports data feeds provider founded in 2005, del
   live scores, fixtures, standings, odds, commentaries, and team/player data across
   20+ sports and 500+ soccer leagues. Feeds are served as XML or JSON over HTTP GET
   with a unique API access key carried in the request path.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: true
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/goalserve.png
 tags:
 - Sports Data
 - Live Scores
@@ -17,105 +30,90 @@ created: '2026-06-25'
 modified: '2026-06-25'
 specificationVersion: '0.19'
 apis:
-- aid: goalserve:goalserve-live-scores-api
-  name: GoalServe Live Scores API
-  tags:
-  - Live Scores
-  - Real Time
-  - Soccer
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.goalserve.com/en/sport-data-feeds/soccer-api/description
-  baseURL: https://www.goalserve.com/getfeed
-  properties:
-  - url: https://documentation.goalserve.com/v1/
-    type: Documentation
-  - url: https://www.goalserve.com/en/api-documentation
-    type: APIReference
-  - url: openapi/goalserve-openapi.yml
-    type: OpenAPI
-  description: Real-time live score feeds for in-progress soccer matches, including
-    goals, cards, substitutions and current minute, refreshed every few seconds and
-    delivered as XML or JSON.
-- aid: goalserve:goalserve-fixtures-schedules-api
-  name: GoalServe Fixtures and Schedules API
-  tags:
-  - Fixtures
-  - Schedules
-  - Results
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.goalserve.com/en/sport-data-feeds/soccer-api/sample/7
-  baseURL: https://www.goalserve.com/getfeed
-  properties:
-  - url: https://documentation.goalserve.com/v1/
-    type: Documentation
-  - url: openapi/goalserve-openapi.yml
-    type: OpenAPI
-  description: Upcoming match fixtures, schedules and historical results by country
-    and competition, supporting calendar and results-page use cases.
-- aid: goalserve:goalserve-standings-api
-  name: GoalServe Standings API
-  tags:
-  - Standings
-  - League Tables
-  - Top Scorers
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.goalserve.com/en/sport-data-feeds/soccer-api/sample/6
-  baseURL: https://www.goalserve.com/getfeed
-  properties:
-  - url: https://documentation.goalserve.com/v1/
-    type: Documentation
-  - url: openapi/goalserve-openapi.yml
-    type: OpenAPI
-  description: League and championship standings tables plus top scorers per
-    competition, returned in XML or JSON.
-- aid: goalserve:goalserve-odds-api
-  name: GoalServe Odds API
-  tags:
-  - Odds
-  - Betting
-  - In-Play
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.goalserve.com/en/sport-data-feeds/soccer-api/description
-  baseURL: https://www.goalserve.com/getfeed
-  properties:
-  - url: https://documentation.goalserve.com/v1/
-    type: Documentation
-  - url: openapi/goalserve-openapi.yml
-    type: OpenAPI
-  description: Prematch and in-play bookmaker odds across 100+ betting markets and
-    30+ bookmakers, with low-latency in-play updates gated behind IP whitelisting.
 - aid: goalserve:goalserve-commentaries-api
   name: GoalServe Commentaries API
+  description: The Commentaries API from GoalServe — 1 operation(s) for commentaries.
+  humanURL: https://www.goalserve.com/en/sport-data-feeds/soccer-api/description
+  baseURL: https://www.goalserve.com/getfeed
   tags:
   - Commentaries
-  - Match Events
-  - Play by Play
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.goalserve.com/en/sport-data-feeds/soccer-api/samples
-  baseURL: https://www.goalserve.com/getfeed
   properties:
-  - url: https://documentation.goalserve.com/v1/
-    type: Documentation
-  - url: openapi/goalserve-openapi.yml
-    type: OpenAPI
-  description: Per-match textual commentaries and detailed event tracking (goals,
-    cards, substitutions, lineups) keyed by match identifier.
-- aid: goalserve:goalserve-team-player-data-api
-  name: GoalServe Team and Player Data API
+  - type: OpenAPI
+    url: openapi/goalserve-commentaries-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.goalserve.com/v1/
+  - type: APIReference
+    url: https://www.goalserve.com/en/api-documentation
+- aid: goalserve:goalserve-fixtures-api
+  name: GoalServe Fixtures API
+  description: The Fixtures API from GoalServe — 1 operation(s) for fixtures.
+  humanURL: https://www.goalserve.com/en/sport-data-feeds/soccer-api/description
+  baseURL: https://www.goalserve.com/getfeed
+  tags:
+  - Fixtures
+  properties:
+  - type: OpenAPI
+    url: openapi/goalserve-fixtures-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.goalserve.com/v1/
+  - type: APIReference
+    url: https://www.goalserve.com/en/api-documentation
+- aid: goalserve:goalserve-live-scores-api
+  name: GoalServe Live Scores API
+  description: The Live Scores API from GoalServe — 2 operation(s) for live scores.
+  humanURL: https://www.goalserve.com/en/sport-data-feeds/soccer-api/description
+  baseURL: https://www.goalserve.com/getfeed
+  tags:
+  - Live Scores
+  properties:
+  - type: OpenAPI
+    url: openapi/goalserve-live-scores-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.goalserve.com/v1/
+  - type: APIReference
+    url: https://www.goalserve.com/en/api-documentation
+- aid: goalserve:goalserve-player-data-api
+  name: GoalServe Player Data API
+  description: The Player Data API from GoalServe — 1 operation(s) for player data.
+  humanURL: https://www.goalserve.com/en/sport-data-feeds/soccer-api/description
+  baseURL: https://www.goalserve.com/getfeed
+  tags:
+  - Player Data
+  properties:
+  - type: OpenAPI
+    url: openapi/goalserve-player-data-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.goalserve.com/v1/
+  - type: APIReference
+    url: https://www.goalserve.com/en/api-documentation
+- aid: goalserve:goalserve-standings-api
+  name: GoalServe Standings API
+  description: The Standings API from GoalServe — 1 operation(s) for standings.
+  humanURL: https://www.goalserve.com/en/sport-data-feeds/soccer-api/description
+  baseURL: https://www.goalserve.com/getfeed
+  tags:
+  - Standings
+  properties:
+  - type: OpenAPI
+    url: openapi/goalserve-standings-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.goalserve.com/v1/
+  - type: APIReference
+    url: https://www.goalserve.com/en/api-documentation
+- aid: goalserve:goalserve-team-data-api
+  name: GoalServe Team Data API
+  description: The Team Data API from GoalServe — 1 operation(s) for team data.
+  humanURL: https://www.goalserve.com/en/sport-data-feeds/soccer-api/description
+  baseURL: https://www.goalserve.com/getfeed
   tags:
   - Team Data
-  - Player Data
-  - Profiles
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.goalserve.com/en/sport-data-feeds/soccer-api/sample/8
-  baseURL: https://www.goalserve.com/getfeed
   properties:
-  - url: https://documentation.goalserve.com/v1/
-    type: Documentation
-  - url: openapi/goalserve-openapi.yml
-    type: OpenAPI
-  description: Team and player profiles, squad data, statistics and injuries keyed
-    by team or player identifier.
+  - type: OpenAPI
+    url: openapi/goalserve-team-data-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.goalserve.com/v1/
+  - type: APIReference
+    url: https://www.goalserve.com/en/api-documentation
 common:
 - type: AgenticAccess
   url: agentic-access/goalserve-agentic-access.yml
