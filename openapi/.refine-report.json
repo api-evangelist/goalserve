@@ -1,0 +1,24 @@
+{
+  "provider": "goalserve",
+  "sources": [
+    "goalserve-commentaries-api-openapi.yml",
+    "goalserve-fixtures-api-openapi.yml",
+    "goalserve-live-scores-api-openapi.yml",
+    "goalserve-player-data-api-openapi.yml",
+    "goalserve-standings-api-openapi.yml",
+    "goalserve-team-data-api-openapi.yml"
+  ],
+  "outputs": [
+    "goalserve-commentaries-api-openapi.yml",
+    "goalserve-fixtures-api-openapi.yml",
+    "goalserve-live-scores-api-openapi.yml",
+    "goalserve-player-data-api-openapi.yml",
+    "goalserve-standings-api-openapi.yml",
+    "goalserve-team-data-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
