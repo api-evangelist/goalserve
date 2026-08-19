@@ -1,0 +1,293 @@
+{
+  "item": [
+    {
+      "id": "d71942a3-d2cb-49e6-a7ac-4a982c9a8187",
+      "name": "Live Scores",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a4593a1d-a1d2-4b8a-bce3-a32e90cb932d",
+          "name": "Live soccer scores",
+          "request": {
+            "name": "Live soccer scores",
+            "description": {
+              "content": "Returns currently live and recently played soccer matches across all covered leagues, including scores, current minute, goals, cards and substitutions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":key",
+                "soccernew",
+                "home"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "json",
+                  "value": "<integer>",
+                  "description": "Set to `1` to receive the feed as JSON instead of the default XML."
+                },
+                {
+                  "disabled": false,
+                  "key": "cat",
+                  "value": "<string>",
+                  "description": "Optional category (league) identifier to filter the live feed to a single competition."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "key",
+                  "description": "(Required) GoalServe API access key path segment."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c14e6309-be81-4f5c-9d03-84724de98b27",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":key",
+                    "soccernew",
+                    "home"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "json",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "cat",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "key",
+                      "description": "(Required) GoalServe API access key path segment."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7a578ef-d1b8-4c50-99c0-8462b2735c4d",
+          "name": "Live scores by country",
+          "request": {
+            "name": "Live scores by country",
+            "description": {
+              "content": "Returns live and recent soccer matches for a single country.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":key",
+                "soccernew",
+                ":country"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "json",
+                  "value": "<integer>",
+                  "description": "Set to `1` to receive the feed as JSON instead of the default XML."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "key",
+                  "description": "(Required) GoalServe API access key path segment."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "country",
+                  "description": "(Required) Country identifier (e.g. england, spain, italy)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "438e2ff3-f4c8-4183-b851-bb98ca6af9c9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":key",
+                    "soccernew",
+                    ":country"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "json",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "key",
+                      "description": "(Required) GoalServe API access key path segment."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "country",
+                      "description": "(Required) Country identifier (e.g. england, spain, italy)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.goalserve.com/getfeed",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "74fc7ce3-ec79-4cdf-a7fe-99f66ad42eb4",
+    "name": "GoalServe Sports Data Feeds Commentaries Live Scores API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "GoalServe live sports data feeds API. All feeds are requested with a standard HTTP GET and return XML by default or JSON when the `json` query parameter is set. Authentication is performed with a unique API access key carried directly in the request path immediately after `/getfeed/`. Access to in-play feeds additionally requires the caller's IP address to be whitelisted in the GoalServe system.\n\nContact Support:\n Name: GoalServe Support\n Email: support@goalserve.com",
+      "type": "text/plain"
+    }
+  }
+}

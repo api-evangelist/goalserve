@@ -1,0 +1,57 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoalServe Sports Data Feeds Commentaries Standings API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Standings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "League standings and top scorers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.goalserve.com/getfeed/:key/standings/:competition",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path",
+                "description": "GoalServe API access key path segment."
+              },
+              {
+                "name": "competition",
+                "value": "",
+                "type": "path",
+                "description": "Competition identifier (e.g. 1204 for the English Premier League)."
+              },
+              {
+                "name": "json",
+                "value": "",
+                "type": "query",
+                "description": "Set to `1` to receive the feed as JSON instead of the default XML."
+              }
+            ]
+          },
+          "docs": "Returns the standings table and top scorers for a given competition identifier."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

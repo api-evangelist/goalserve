@@ -1,0 +1,173 @@
+{
+  "item": [
+    {
+      "id": "4989fd98-08df-4b82-9792-6133e04193bd",
+      "name": "Standings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "32af36ff-a6e9-41dd-a678-9934759a11fe",
+          "name": "League standings and top scorers",
+          "request": {
+            "name": "League standings and top scorers",
+            "description": {
+              "content": "Returns the standings table and top scorers for a given competition identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":key",
+                "standings",
+                ":competition"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "json",
+                  "value": "<integer>",
+                  "description": "Set to `1` to receive the feed as JSON instead of the default XML."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "key",
+                  "description": "(Required) GoalServe API access key path segment."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "competition",
+                  "description": "(Required) Competition identifier (e.g. 1204 for the English Premier League)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "db3b3f7f-e6a3-42ba-b7de-e6899c7e0b25",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":key",
+                    "standings",
+                    ":competition"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "json",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "key",
+                      "description": "(Required) GoalServe API access key path segment."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "competition",
+                      "description": "(Required) Competition identifier (e.g. 1204 for the English Premier League)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.goalserve.com/getfeed",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "23c8c171-9c25-4777-9119-0a9a79dbc98e",
+    "name": "GoalServe Sports Data Feeds Commentaries Standings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "GoalServe live sports data feeds API. All feeds are requested with a standard HTTP GET and return XML by default or JSON when the `json` query parameter is set. Authentication is performed with a unique API access key carried directly in the request path immediately after `/getfeed/`. Access to in-play feeds additionally requires the caller's IP address to be whitelisted in the GoalServe system.\n\nContact Support:\n Name: GoalServe Support\n Email: support@goalserve.com",
+      "type": "text/plain"
+    }
+  }
+}

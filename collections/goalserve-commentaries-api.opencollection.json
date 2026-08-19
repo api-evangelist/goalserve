@@ -1,0 +1,57 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoalServe Sports Data Feeds Commentaries API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Commentaries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Match commentaries and events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.goalserve.com/getfeed/:key/commentaries/:matchid",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path",
+                "description": "GoalServe API access key path segment."
+              },
+              {
+                "name": "matchid",
+                "value": "",
+                "type": "path",
+                "description": "Match identifier."
+              },
+              {
+                "name": "json",
+                "value": "",
+                "type": "query",
+                "description": "Set to `1` to receive the feed as JSON instead of the default XML."
+              }
+            ]
+          },
+          "docs": "Returns textual commentaries, lineups and a chronological list of match events (goals, cards, substitutions) for a single match."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

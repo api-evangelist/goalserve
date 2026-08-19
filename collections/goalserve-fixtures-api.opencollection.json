@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoalServe Sports Data Feeds Commentaries Fixtures API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Fixtures",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Soccer fixtures and schedules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.goalserve.com/getfeed/:key/soccerfixtures/:country/:cat",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path",
+                "description": "GoalServe API access key path segment."
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "path",
+                "description": "Country identifier."
+              },
+              {
+                "name": "cat",
+                "value": "",
+                "type": "path",
+                "description": "Competition (category) identifier."
+              },
+              {
+                "name": "json",
+                "value": "",
+                "type": "query",
+                "description": "Set to `1` to receive the feed as JSON instead of the default XML."
+              }
+            ]
+          },
+          "docs": "Returns upcoming fixtures, schedules and results for a given country and competition category."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

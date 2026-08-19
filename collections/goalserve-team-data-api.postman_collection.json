@@ -1,0 +1,175 @@
+{
+  "item": [
+    {
+      "id": "2d0f6f42-1f64-46ef-9587-f644d0870387",
+      "name": "Team Data",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1c4150ae-d930-4e2a-b5ce-d05336085bcb",
+          "name": "Team profile and statistics",
+          "request": {
+            "name": "Team profile and statistics",
+            "description": {
+              "content": "Returns the profile, squad and statistics for a single team.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":key",
+                "soccerstats",
+                "team",
+                ":team_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "json",
+                  "value": "<integer>",
+                  "description": "Set to `1` to receive the feed as JSON instead of the default XML."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "key",
+                  "description": "(Required) GoalServe API access key path segment."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "team_id",
+                  "description": "(Required) Team identifier."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7f52700-a516-49ba-94c8-523f44b14e96",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":key",
+                    "soccerstats",
+                    "team",
+                    ":team_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "json",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "key",
+                      "description": "(Required) GoalServe API access key path segment."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "team_id",
+                      "description": "(Required) Team identifier."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.goalserve.com/getfeed",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "67158822-5b42-4b74-8f47-f94534c13221",
+    "name": "GoalServe Sports Data Feeds Commentaries Team Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "GoalServe live sports data feeds API. All feeds are requested with a standard HTTP GET and return XML by default or JSON when the `json` query parameter is set. Authentication is performed with a unique API access key carried directly in the request path immediately after `/getfeed/`. Access to in-play feeds additionally requires the caller's IP address to be whitelisted in the GoalServe system.\n\nContact Support:\n Name: GoalServe Support\n Email: support@goalserve.com",
+      "type": "text/plain"
+    }
+  }
+}

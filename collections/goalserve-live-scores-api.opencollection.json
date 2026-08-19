@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoalServe Sports Data Feeds Commentaries Live Scores API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Live Scores",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Live soccer scores",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.goalserve.com/getfeed/:key/soccernew/home",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path",
+                "description": "GoalServe API access key path segment."
+              },
+              {
+                "name": "json",
+                "value": "",
+                "type": "query",
+                "description": "Set to `1` to receive the feed as JSON instead of the default XML."
+              },
+              {
+                "name": "cat",
+                "value": "",
+                "type": "query",
+                "description": "Optional category (league) identifier to filter the live feed to a single competition."
+              }
+            ]
+          },
+          "docs": "Returns currently live and recently played soccer matches across all covered leagues, including scores, current minute, goals, cards and substitutions."
+        },
+        {
+          "info": {
+            "name": "Live scores by country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.goalserve.com/getfeed/:key/soccernew/:country",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path",
+                "description": "GoalServe API access key path segment."
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "path",
+                "description": "Country identifier (e.g. england, spain, italy)."
+              },
+              {
+                "name": "json",
+                "value": "",
+                "type": "query",
+                "description": "Set to `1` to receive the feed as JSON instead of the default XML."
+              }
+            ]
+          },
+          "docs": "Returns live and recent soccer matches for a single country."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
