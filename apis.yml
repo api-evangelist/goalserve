@@ -6,6 +6,18 @@ description: GoalServe is a live sports data feeds provider founded in 2005, del
   live scores, fixtures, standings, odds, commentaries, and team/player data across
   20+ sports and 500+ soccer leagues. Feeds are served as XML or JSON over HTTP GET
   with a unique API access key carried in the request path.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
