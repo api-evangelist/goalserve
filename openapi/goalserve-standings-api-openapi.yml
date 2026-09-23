@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: GoalServe Sports Data Feeds Commentaries Standings API
+  title: GoalServe Sports Data Feeds Standings API
   description: GoalServe live sports data feeds API. All feeds are requested with a standard HTTP GET and return XML by default or JSON when the `json` query parameter is set. Authentication is performed with a unique API access key carried directly in the request path immediately after `/getfeed/`. Access to in-play feeds additionally requires the caller's IP address to be whitelisted in the GoalServe system.
   termsOfService: https://www.goalserve.com/en/terms
   contact:

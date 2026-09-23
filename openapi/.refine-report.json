@@ -1,12 +1,7 @@
 {
   "provider": "goalserve",
   "sources": [
-    "goalserve-commentaries-api-openapi.yml",
-    "goalserve-fixtures-api-openapi.yml",
-    "goalserve-live-scores-api-openapi.yml",
-    "goalserve-player-data-api-openapi.yml",
-    "goalserve-standings-api-openapi.yml",
-    "goalserve-team-data-api-openapi.yml"
+    "_original/goalserve-openapi.yml"
   ],
   "outputs": [
     "goalserve-commentaries-api-openapi.yml",
@@ -16,9 +11,29 @@
     "goalserve-standings-api-openapi.yml",
     "goalserve-team-data-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "goalserve-openapi.yml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "goalserve-openapi.yml: declared missing tag: Commentaries",
+    "goalserve-openapi.yml: declared missing tag: Fixtures",
+    "goalserve-openapi.yml: declared missing tag: Live Scores",
+    "goalserve-openapi.yml: declared missing tag: Player Data",
+    "goalserve-openapi.yml: declared missing tag: Standings",
+    "goalserve-openapi.yml: declared missing tag: Team Data",
+    "superseded outputs removed: goalserve-livescores-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 6 total)"
+  ],
+  "skipped": [
+    "goalserve-commentaries-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "goalserve-fixtures-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "goalserve-livescores-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "goalserve-player-data-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "goalserve-standings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "goalserve-team-data-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
