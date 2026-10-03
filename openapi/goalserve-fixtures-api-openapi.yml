@@ -50,6 +50,13 @@ paths:
                 type: object
 components:
   parameters:
+    Key:
+      name: key
+      in: path
+      required: true
+      description: GoalServe API access key path segment.
+      schema:
+        type: string
     Json:
       name: json
       in: query
@@ -59,13 +66,6 @@ components:
         type: integer
         enum:
         - 1
-    Key:
-      name: key
-      in: path
-      required: true
-      description: GoalServe API access key path segment.
-      schema:
-        type: string
   securitySchemes:
     ApiKeyInPath:
       type: apiKey
