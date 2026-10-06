@@ -39,7 +39,7 @@ tags:
 - Fixtures
 - Soccer
 created: '2026-06-25'
-modified: '2026-06-25'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: goalserve:goalserve-commentaries-api
@@ -127,6 +127,8 @@ apis:
   - type: APIReference
     url: https://www.goalserve.com/en/api-documentation
 common:
+- url: https://www.goalserve.com/en/blog
+  type: Blog
 - type: AgenticAccess
   url: agentic-access/goalserve-agentic-access.yml
 - type: DomainSecurity
