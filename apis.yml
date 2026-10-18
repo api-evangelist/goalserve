@@ -118,6 +118,8 @@ apis:
   humanURL: https://www.goalserve.com/en/sport-data-feeds/soccer-api/description
   baseURL: https://www.goalserve.com/getfeed
   tags:
+  - Live Scores
+  tags_raw:
   - Livescores
   properties:
   - type: OpenAPI
