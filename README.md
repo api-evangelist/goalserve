@@ -1,4 +1,4 @@
-# GoalServe (goalserve)
+# GoalServe
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,154 +66,125 @@
 
 GoalServe is a live sports data feeds provider founded in 2005, delivering live scores, fixtures, standings, odds, commentaries, and team/player data across 20+ sports and 500+ soccer leagues. Feeds are served as XML or JSON over HTTP GET with a unique API access key carried in the request path.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/goalserve/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/goalserve/refs/heads/main/apis.yml)
+**Areas:** Sports Data · Live Scores · Odds · Fixtures · Soccer
 
-## Tags
+## GoalServe on APIs.io
 
-- Sports Data
-- Live Scores
-- Odds
-- Fixtures
-- Soccer
+Everything profiled for GoalServe is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/goalserve/](https://apis.io/providers/goalserve/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (6)
 
-- **Created:** 2026-06-25
-- **Modified:** 2026-06-25
+- [GoalServe Commentaries API](https://apis.io/apis/goalserve/goalserve-commentaries-api/) — The Commentaries API from GoalServe — 1 operation(s) for commentaries.
+- [GoalServe Fixtures API](https://apis.io/apis/goalserve/goalserve-fixtures-api/) — The Fixtures API from GoalServe — 1 operation(s) for fixtures.
+- [GoalServe Player Data API](https://apis.io/apis/goalserve/goalserve-player-data-api/) — The Player Data API from GoalServe — 1 operation(s) for player data.
+- [GoalServe Standings API](https://apis.io/apis/goalserve/goalserve-standings-api/) — The Standings API from GoalServe — 1 operation(s) for standings.
+- [GoalServe Team Data API](https://apis.io/apis/goalserve/goalserve-team-data-api/) — The Team Data API from GoalServe — 1 operation(s) for team data.
+- [GoalServe Livescores API](https://apis.io/apis/goalserve/goalserve-livescores-api/) — The Livescores API from GoalServe — 2 operation(s) for livescores.
 
-## APIs
+### Published properties
 
-### GoalServe Live Scores API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Real-time live score feeds for in-progress soccer matches, including goals, cards, substitutions and current minute, refreshed every few seconds and delivered as XML or JSON.
+#### Agentic access (1)
 
-- **Human URL:** [https://www.goalserve.com/en/sport-data-feeds/soccer-api/description](https://www.goalserve.com/en/sport-data-feeds/soccer-api/description)
-- **Base URL:** `https://www.goalserve.com/getfeed`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Goalserve Agentic Access](https://apis.io/agentic-access/goalserve/goalserve-agentic-access/)
 
-- Live Scores
-- Real Time
-- Soccer
+#### Collections (7)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://documentation.goalserve.com/v1/)
-- [API Reference](https://www.goalserve.com/en/api-documentation)
-- [OpenAPI](openapi/goalserve-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/goalserve.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/goalserve.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [GoalServe Sports Data Feeds API](https://apis.io/collections/goalserve/open-goalserve/)
+- [GoalServe Sports Data Feeds Commentaries API](https://apis.io/collections/goalserve/open-goalserve-commentaries-api/)
+- [GoalServe Sports Data Feeds Commentaries Fixtures API](https://apis.io/collections/goalserve/open-goalserve-fixtures-api/)
+- [GoalServe Sports Data Feeds Commentaries Live Scores API](https://apis.io/collections/goalserve/open-goalserve-live-scores-api/)
+- [GoalServe Sports Data Feeds Commentaries Player Data API](https://apis.io/collections/goalserve/open-goalserve-player-data-api/)
+- [GoalServe Sports Data Feeds Commentaries Standings API](https://apis.io/collections/goalserve/open-goalserve-standings-api/)
+- [GoalServe Sports Data Feeds Commentaries Team Data API](https://apis.io/collections/goalserve/open-goalserve-team-data-api/)
 
-### GoalServe Fixtures and Schedules API
+#### Security (2)
 
-Upcoming match fixtures, schedules and historical results by country and competition, supporting calendar and results-page use cases.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://www.goalserve.com/en/sport-data-feeds/soccer-api/sample/7](https://www.goalserve.com/en/sport-data-feeds/soccer-api/sample/7)
-- **Base URL:** `https://www.goalserve.com/getfeed`
+- [Goalserve Authentication](https://apis.io/security/goalserve/goalserve-authentication/)
+- [Goalserve Domain Security](https://apis.io/security/goalserve/goalserve-domain-security/)
 
-#### Tags
+#### Plans and pricing (1)
 
-- Fixtures
-- Schedules
-- Results
+Published plans, tiers and prices.
 
-#### Properties
+- [Goalserve Plans Pricing](https://apis.io/plans/goalserve/goalserve-plans-pricing/)
 
-- [Documentation](https://documentation.goalserve.com/v1/)
-- [OpenAPI](openapi/goalserve-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/goalserve.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/goalserve.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Rate limits (1)
 
-### GoalServe Standings API
+Published request limits.
 
-League and championship standings tables plus top scorers per competition, returned in XML or JSON.
+- [Goalserve Rate Limits](https://apis.io/rate-limits/goalserve/goalserve-rate-limits/)
 
-- **Human URL:** [https://www.goalserve.com/en/sport-data-feeds/soccer-api/sample/6](https://www.goalserve.com/en/sport-data-feeds/soccer-api/sample/6)
-- **Base URL:** `https://www.goalserve.com/getfeed`
+#### FinOps (1)
 
-#### Tags
+What the API costs to run, by operation.
 
-- Standings
-- League Tables
-- Top Scorers
+- [Goalserve Finops](https://apis.io/finops/goalserve/goalserve-finops/)
 
-#### Properties
+## Where to find this API
 
-- [Documentation](https://documentation.goalserve.com/v1/)
-- [OpenAPI](openapi/goalserve-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/goalserve.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/goalserve.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### GoalServe Odds API
-
-Prematch and in-play bookmaker odds across 100+ betting markets and 30+ bookmakers, with low-latency in-play updates gated behind IP whitelisting.
-
-- **Human URL:** [https://www.goalserve.com/en/sport-data-feeds/soccer-api/description](https://www.goalserve.com/en/sport-data-feeds/soccer-api/description)
-- **Base URL:** `https://www.goalserve.com/getfeed`
-
-#### Tags
-
-- Odds
-- Betting
-- In-Play
-
-#### Properties
-
-- [Documentation](https://documentation.goalserve.com/v1/)
-- [OpenAPI](openapi/goalserve-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/goalserve.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/goalserve.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### GoalServe Commentaries API
-
-Per-match textual commentaries and detailed event tracking (goals, cards, substitutions, lineups) keyed by match identifier.
-
-- **Human URL:** [https://www.goalserve.com/en/sport-data-feeds/soccer-api/samples](https://www.goalserve.com/en/sport-data-feeds/soccer-api/samples)
-- **Base URL:** `https://www.goalserve.com/getfeed`
-
-#### Tags
-
-- Commentaries
-- Match Events
-- Play by Play
-
-#### Properties
-
-- [Documentation](https://documentation.goalserve.com/v1/)
-- [OpenAPI](openapi/goalserve-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/goalserve.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/goalserve.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### GoalServe Team and Player Data API
-
-Team and player profiles, squad data, statistics and injuries keyed by team or player identifier.
-
-- **Human URL:** [https://www.goalserve.com/en/sport-data-feeds/soccer-api/sample/8](https://www.goalserve.com/en/sport-data-feeds/soccer-api/sample/8)
-- **Base URL:** `https://www.goalserve.com/getfeed`
-
-#### Tags
-
-- Team Data
-- Player Data
-- Profiles
-
-#### Properties
-
-- [Documentation](https://documentation.goalserve.com/v1/)
-- [OpenAPI](openapi/goalserve-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/goalserve.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/goalserve.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/goalserve-api)
 - [Website](https://www.goalserve.com)
 - [Documentation](https://documentation.goalserve.com/v1/)
-- [Plans](plans/goalserve-plans-pricing.yml)
-- [Rate Limits](rate-limits/goalserve-rate-limits.yml)
-- [Fin Ops](finops/goalserve-finops.yml)
+- [Blog](https://www.goalserve.com/en/blog)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 25.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 47.8 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 7.9 |
+
+**Agent readiness 20.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/goalserve/](https://apis.io/providers/goalserve/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for GoalServe: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/goalserve/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
